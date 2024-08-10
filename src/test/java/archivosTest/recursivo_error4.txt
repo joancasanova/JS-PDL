@@ -1,0 +1,3 @@
+function FactorialRecursivo int (int n)	{
+    return FactorialRecursivo(void);
+}

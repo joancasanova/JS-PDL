@@ -1,0 +1,2 @@
+let x int = 32767;
+let x int = 327;

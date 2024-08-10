@@ -1,0 +1,26 @@
+CONTENIDOS DE LA TABLA #1:
+
+*	LEXEMA	:	'n'
+Atributos: 
++ tipo: 'INT'	
++ despl: 2
+*	LEXEMA	:	'i'
+Atributos: 
++ tipo: 'INT'	
++ despl: 4
+*	LEXEMA	:	'factorial'
+Atributos: 
++ tipo: 'INT'	
++ despl: 6
+
+CONTENIDOS DE LA TABLA #0:
+
+*	LEXEMA	:	'FactorialFor'
+Atributos: 
++ tipo: 'INT'	
++ numParam: '1'	
++ TipoParam0: 'INT'	
++ ModoParam0: 'VALOR'	
++ TipoRetorno: 'INT'	
++ EtiqFuncion: 'FactorialFor'	
+

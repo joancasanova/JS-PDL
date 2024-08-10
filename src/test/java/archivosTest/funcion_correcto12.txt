@@ -1,0 +1,3 @@
+function fun2 boolean (void) {
+    return 0==0;
+}

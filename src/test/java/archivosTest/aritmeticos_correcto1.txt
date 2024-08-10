@@ -1,0 +1,15 @@
+x = 0;
+y = 1;
+z = x + y;
+
+let a int = 0;
+let b int = 1;
+let c int = a + b;
+
+let d int = 0;
+let e int = 1;
+let f int = d + 5;
+
+let h int = 1;
+let i int = 0;
+let k int = h + i;

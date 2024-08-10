@@ -1,0 +1,8 @@
+
+function factorial int (int x)
+{
+    let y int;
+    if (x == 1) 
+        y = x;
+    return 1;
+}

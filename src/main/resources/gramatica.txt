@@ -1,0 +1,54 @@
+NoTerminales = { P1 P E U V W X S L Q Z B T F F1 F2 H A K C }
+
+Terminales = { == + ! , id ( ) ent cad = ; put get return += if while let int boolean string { } function void $ }
+
+Axioma = P1
+
+Producciones = {
+	P1 -> P $
+	P -> B P
+	P -> F P
+	P -> lambda
+	B -> if ( E ) S
+	B -> while ( E ) { C }
+	B -> let id T ;
+	B -> let id T = E ;
+	B -> S
+	T -> int
+	T -> boolean
+	T -> string
+	F -> F1 { C }
+	F1 -> F2 ( A )
+	F2 -> function id H
+	H -> T
+	H -> void
+	A -> T id K
+	A -> void
+	K -> , T id K
+	K -> lambda
+	C -> B C
+	C -> lambda
+	E -> E == U
+	E -> U
+	U -> U + V
+	U -> V
+	V -> ! W
+	V -> W
+	W -> id
+	W -> ( E )
+	W -> id ( L )
+	W -> ent
+	W -> cad
+	S -> id = E ;	
+	S -> id += E ;
+	S -> id ( L ) ;
+	S -> put E ;
+	S -> get id ;
+	S -> return Z ;
+	L -> E Q
+	L -> lambda
+	Q -> , E Q
+	Q -> lambda
+	Z -> E
+	Z -> lambda
+}

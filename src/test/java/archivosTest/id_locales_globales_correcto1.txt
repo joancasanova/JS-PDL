@@ -1,0 +1,14 @@
+let x int = 0;
+function f int (boolean a) {
+    let n int;
+    n = 3;
+    x = 5;
+    return x;
+}
+
+function f1 int (boolean a1) {
+    let n1 int;
+    n1 = 3;
+    return n1;
+}
+x1 = 0;

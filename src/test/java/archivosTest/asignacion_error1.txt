@@ -1,0 +1,6 @@
+let i int = 123; // i es una variable entera
+let cad string;
+put i;           // imprime el valor entero 123
+cad= "hola";
+put cad;         // imprime el valor cadena "hola"
+i = (i == 24);   // Error: no se puede asignar un lógico a un entero

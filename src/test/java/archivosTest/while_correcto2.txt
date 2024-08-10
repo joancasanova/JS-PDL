@@ -1,0 +1,34 @@
+let fin boolean;
+let a int = 0;
+let b int = 0;
+function f int(void){}
+while (a == b) {
+    f();
+    c = b;
+    let x int;
+    x = b;
+    if(x==1) x = a;
+}
+while (a == b) {
+    f();
+    if(x==1) x = a;
+    c = b;
+    let z int;
+    z = b;
+}
+while (a == b) {
+    let h int;
+    h = b;
+    if(x==1) x = a;
+    c = b;
+    f();
+    while (a == b) {c = b;}
+}
+while (a == b) {
+    if(a==1) b = a;
+    a = b;
+    c = b;
+    f();
+}
+while (a == b) {c = b;}
+while (fin) {put("adiós");}

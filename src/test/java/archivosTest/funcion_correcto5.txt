@@ -1,0 +1,7 @@
+function fun1 int (int a) {
+    return a;
+}
+function fun2 boolean (void) {
+}
+let a int;
+while (fun2 ()){fun1 (a);}

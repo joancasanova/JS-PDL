@@ -1,0 +1,5 @@
+function FactorialRecursivo int (int n)	{
+    if (n == 0)	return 1;
+    a = 0;
+    return FactorialRecursivo(a);
+}

@@ -1,0 +1,5 @@
+function factorial int (void)
+{
+    if (1 == 1) 
+        return 1;
+}

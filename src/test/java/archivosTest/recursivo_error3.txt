@@ -1,0 +1,4 @@
+let a int = 0;
+function FactorialRecursivo int (int n)	{
+    return FactorialRecursivo(n + 1, a);
+}

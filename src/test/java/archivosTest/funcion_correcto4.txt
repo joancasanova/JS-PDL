@@ -1,0 +1,5 @@
+function fun1 boolean (boolean a) {
+    return a;
+}
+let a boolean;
+while (fun1(a)){fun1(a);}

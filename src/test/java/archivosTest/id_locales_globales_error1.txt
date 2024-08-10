@@ -1,0 +1,7 @@
+x = 5;
+function f int (boolean a) {
+    let n int;
+    n = 3;
+    return n;
+}
+let x string;

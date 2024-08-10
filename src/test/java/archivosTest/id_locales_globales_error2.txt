@@ -1,0 +1,6 @@
+function f boolean (boolean a) {
+    let n int;
+    n = 3;
+    let n string = 5;
+    return a;
+}

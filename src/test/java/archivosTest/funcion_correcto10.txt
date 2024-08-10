@@ -1,0 +1,7 @@
+function fun1 int (int a, int b) {
+    let x int = 8;
+    let z int = 8;
+}    
+let x int = 8;
+let z int = 8;
+fun1(x,z);

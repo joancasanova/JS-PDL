@@ -1,0 +1,8 @@
+let a int;
+let c string;
+get a;   
+put a + a;
+put"Pon tu nombre";
+get  c;  
+put ("Hola, ");
+put(c);  

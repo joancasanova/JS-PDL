@@ -1,0 +1,6 @@
+
+function FactorialFor int (int n)
+{
+	let i int;
+	factorial = i;
+}

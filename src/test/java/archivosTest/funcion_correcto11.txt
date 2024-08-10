@@ -1,0 +1,27 @@
+function hola void (void)
+{
+    put"Hello!";
+}
+
+let x int;
+function factorial int (boolean x)
+{
+    hola();
+    if (x) 
+        return 2 + factorial (x);
+    return 1;
+}
+
+function Suma boolean (int aux, int fin, boolean b)
+{
+    return aux == 10000;
+}
+function Imprime void (int a)
+{
+    put (a);
+    return;
+}
+
+get x;
+
+Imprime (factorial (Suma (x, 3, 0==0)));  

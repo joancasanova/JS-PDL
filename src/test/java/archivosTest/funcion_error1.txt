@@ -1,0 +1,4 @@
+fun1();
+function fun1 void (void) {
+    return;
+}

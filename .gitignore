@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+*.class
+bin/
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Java specific files
+*.class
+*.project
+*.classpath
+*.settings/
+
+# VS Code files
+.vscode/*
+.vscode
+.vscode*
+
+# Gradle files
+gradlew
+gradlew.bat
+.gradle/
+build/
+gradle/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Eclipse files
+.settings/
+bin/
+tmp/
+.apt_generated/
+.factorypath
+
+# macOS specific files
+.DS_Store
+
+# Windows specific files
+Thumbs.db

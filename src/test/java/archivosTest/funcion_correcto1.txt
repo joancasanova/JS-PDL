@@ -1,0 +1,12 @@
+function p1 int (int a) {
+    return a;
+}
+function p2 void (void) {
+}
+function p3 string (string a, int b) {
+    return a;
+}
+let i int = 0;
+p1 (5);           // llamada a una función con un argumento entero
+p2 ();            // llamada sin parámetros a una función
+p3 ("", i + 8);   // llamada con dos argumentos a una función

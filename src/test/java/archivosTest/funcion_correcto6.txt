@@ -1,0 +1,9 @@
+function fun1 int (int a) {
+    return a;
+}
+function fun2 int (int a, int b) {
+    return a;
+}
+let a int;
+let b int;
+c = b + fun2(a, fun1(a));

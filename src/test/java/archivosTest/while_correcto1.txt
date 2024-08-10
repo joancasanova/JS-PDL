@@ -1,0 +1,10 @@
+let fin boolean;
+let a int = 0;
+let b int = 0;
+function f int(void){}
+while (a == b) {
+    f();
+    c = b;
+}
+while (a == b) {c = b;}
+while (fin) {put("adiós");}

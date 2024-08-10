@@ -1,0 +1,6 @@
+let i int = 11;
+let st string;
+let b boolean;
+let c int = 66+i;
+b = i == c + 1;
+c = c + i;

@@ -1,0 +1,3 @@
+let y int = 1;
+let x string = "hola";
+let z int = x + y;

@@ -1,0 +1,3 @@
+function fun1 int (int a) {
+    return "hola";
+}

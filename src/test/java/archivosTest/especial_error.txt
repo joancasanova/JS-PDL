@@ -1,0 +1,3 @@
+let n int;
+let m string;
+n += m;

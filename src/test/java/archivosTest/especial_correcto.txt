@@ -1,0 +1,3 @@
+let n int;
+let m int;
+n += m;

@@ -1,0 +1,5 @@
+function fun1 boolean (boolean a) {
+    return a;
+}
+let a boolean;
+if (fun1 (a)) b=1;

@@ -1,0 +1,1127 @@
+Grammar
+
+    0 $accept: P $end
+
+    1 P: B P
+    2  | F P
+    3  | ε
+
+    4 B: IF '(' E ')' S
+    5  | WHILE '(' E ')' '{' C '}'
+    6  | LET ID T ';'
+    7  | LET ID T '=' E ';'
+    8  | S
+
+    9 T: INT
+   10  | BOOLEAN
+   11  | STRING
+
+   12 F: F1 '{' C '}'
+
+   13 F1: F2 '(' A ')'
+
+   14 F2: FUNCTION ID H
+
+   15 H: T
+   16  | VOID
+
+   17 A: T ID K
+   18  | VOID
+
+   19 K: ',' T ID K
+   20  | ε
+
+   21 C: B C
+   22  | ε
+
+   23 E: E EQ_OP U
+   24  | U
+
+   25 U: U '+' V
+   26  | V
+
+   27 V: '!' W
+   28  | W
+
+   29 W: ID
+   30  | '(' E ')'
+   31  | ID '(' L ')'
+   32  | ENTERO
+   33  | CADENA
+
+   34 S: ID '=' E ';'
+   35  | ID ADD_OP E ';'
+   36  | ID '(' L ')' ';'
+   37  | PUT E ';'
+   38  | GET ID ';'
+   39  | RETURN Z ';'
+
+   40 L: E Q
+   41  | ε
+
+   42 Q: ',' E Q
+   43  | ε
+
+   44 Z: E
+   45  | ε
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    '!' (33) 27
+    '(' (40) 4 5 13 30 31 36
+    ')' (41) 4 5 13 30 31 36
+    '+' (43) 25
+    ',' (44) 19 42
+    ';' (59) 6 7 34 35 36 37 38 39
+    '=' (61) 7 34
+    '{' (123) 5 12
+    '}' (125) 5 12
+    error (256)
+    ID (258) 6 7 14 17 19 29 31 34 35 36 38
+    ENTERO (259) 32
+    CADENA (260) 33
+    PUT (261) 37
+    GET (262) 38
+    RETURN (263) 39
+    IF (264) 4
+    WHILE (265) 5
+    LET (266) 6 7
+    FUNCTION (267) 14
+    INT (268) 9
+    BOOLEAN (269) 10
+    STRING (270) 11
+    VOID (271) 16 18
+    EQ_OP (272) 23
+    ADD_OP (273) 35
+
+
+Nonterminals, with rules where they appear
+
+    $accept (28)
+        on left: 0
+    P (29)
+        on left: 1 2 3
+        on right: 0 1 2
+    B (30)
+        on left: 4 5 6 7 8
+        on right: 1 21
+    T (31)
+        on left: 9 10 11
+        on right: 6 7 15 17 19
+    F (32)
+        on left: 12
+        on right: 2
+    F1 (33)
+        on left: 13
+        on right: 12
+    F2 (34)
+        on left: 14
+        on right: 13
+    H (35)
+        on left: 15 16
+        on right: 14
+    A (36)
+        on left: 17 18
+        on right: 13
+    K (37)
+        on left: 19 20
+        on right: 17 19
+    C (38)
+        on left: 21 22
+        on right: 5 12 21
+    E (39)
+        on left: 23 24
+        on right: 4 5 7 23 30 34 35 37 40 42 44
+    U (40)
+        on left: 25 26
+        on right: 23 24 25
+    V (41)
+        on left: 27 28
+        on right: 25 26
+    W (42)
+        on left: 29 30 31 32 33
+        on right: 27 28
+    S (43)
+        on left: 34 35 36 37 38 39
+        on right: 4 8
+    L (44)
+        on left: 40 41
+        on right: 31 36
+    Q (45)
+        on left: 42 43
+        on right: 40 42
+    Z (46)
+        on left: 44 45
+        on right: 39
+
+
+State 0
+
+    0 $accept: • P $end
+
+    ID        shift, and go to state 1
+    PUT       shift, and go to state 2
+    GET       shift, and go to state 3
+    RETURN    shift, and go to state 4
+    IF        shift, and go to state 5
+    WHILE     shift, and go to state 6
+    LET       shift, and go to state 7
+    FUNCTION  shift, and go to state 8
+
+    $default  reduce using rule 3 (P)
+
+    P   go to state 9
+    B   go to state 10
+    F   go to state 11
+    F1  go to state 12
+    F2  go to state 13
+    S   go to state 14
+
+
+State 1
+
+   34 S: ID • '=' E ';'
+   35  | ID • ADD_OP E ';'
+   36  | ID • '(' L ')' ';'
+
+    ADD_OP  shift, and go to state 15
+    '('     shift, and go to state 16
+    '='     shift, and go to state 17
+
+
+State 2
+
+   37 S: PUT • E ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 23
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 3
+
+   38 S: GET • ID ';'
+
+    ID  shift, and go to state 27
+
+
+State 4
+
+   39 S: RETURN • Z ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    $default  reduce using rule 45 (Z)
+
+    E  go to state 28
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+    Z  go to state 29
+
+
+State 5
+
+    4 B: IF • '(' E ')' S
+
+    '('  shift, and go to state 30
+
+
+State 6
+
+    5 B: WHILE • '(' E ')' '{' C '}'
+
+    '('  shift, and go to state 31
+
+
+State 7
+
+    6 B: LET • ID T ';'
+    7  | LET • ID T '=' E ';'
+
+    ID  shift, and go to state 32
+
+
+State 8
+
+   14 F2: FUNCTION • ID H
+
+    ID  shift, and go to state 33
+
+
+State 9
+
+    0 $accept: P • $end
+
+    $end  shift, and go to state 34
+
+
+State 10
+
+    1 P: B • P
+
+    ID        shift, and go to state 1
+    PUT       shift, and go to state 2
+    GET       shift, and go to state 3
+    RETURN    shift, and go to state 4
+    IF        shift, and go to state 5
+    WHILE     shift, and go to state 6
+    LET       shift, and go to state 7
+    FUNCTION  shift, and go to state 8
+
+    $default  reduce using rule 3 (P)
+
+    P   go to state 35
+    B   go to state 10
+    F   go to state 11
+    F1  go to state 12
+    F2  go to state 13
+    S   go to state 14
+
+
+State 11
+
+    2 P: F • P
+
+    ID        shift, and go to state 1
+    PUT       shift, and go to state 2
+    GET       shift, and go to state 3
+    RETURN    shift, and go to state 4
+    IF        shift, and go to state 5
+    WHILE     shift, and go to state 6
+    LET       shift, and go to state 7
+    FUNCTION  shift, and go to state 8
+
+    $default  reduce using rule 3 (P)
+
+    P   go to state 36
+    B   go to state 10
+    F   go to state 11
+    F1  go to state 12
+    F2  go to state 13
+    S   go to state 14
+
+
+State 12
+
+   12 F: F1 • '{' C '}'
+
+    '{'  shift, and go to state 37
+
+
+State 13
+
+   13 F1: F2 • '(' A ')'
+
+    '('  shift, and go to state 38
+
+
+State 14
+
+    8 B: S •
+
+    $default  reduce using rule 8 (B)
+
+
+State 15
+
+   35 S: ID ADD_OP • E ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 39
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 16
+
+   36 S: ID '(' • L ')' ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    $default  reduce using rule 41 (L)
+
+    E  go to state 40
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+    L  go to state 41
+
+
+State 17
+
+   34 S: ID '=' • E ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 42
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 18
+
+   29 W: ID •
+   31  | ID • '(' L ')'
+
+    '('  shift, and go to state 43
+
+    $default  reduce using rule 29 (W)
+
+
+State 19
+
+   32 W: ENTERO •
+
+    $default  reduce using rule 32 (W)
+
+
+State 20
+
+   33 W: CADENA •
+
+    $default  reduce using rule 33 (W)
+
+
+State 21
+
+   27 V: '!' • W
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '('     shift, and go to state 22
+
+    W  go to state 44
+
+
+State 22
+
+   30 W: '(' • E ')'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 45
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 23
+
+   23 E: E • EQ_OP U
+   37 S: PUT E • ';'
+
+    EQ_OP  shift, and go to state 46
+    ';'    shift, and go to state 47
+
+
+State 24
+
+   24 E: U •
+   25 U: U • '+' V
+
+    '+'  shift, and go to state 48
+
+    $default  reduce using rule 24 (E)
+
+
+State 25
+
+   26 U: V •
+
+    $default  reduce using rule 26 (U)
+
+
+State 26
+
+   28 V: W •
+
+    $default  reduce using rule 28 (V)
+
+
+State 27
+
+   38 S: GET ID • ';'
+
+    ';'  shift, and go to state 49
+
+
+State 28
+
+   23 E: E • EQ_OP U
+   44 Z: E •
+
+    EQ_OP  shift, and go to state 46
+
+    $default  reduce using rule 44 (Z)
+
+
+State 29
+
+   39 S: RETURN Z • ';'
+
+    ';'  shift, and go to state 50
+
+
+State 30
+
+    4 B: IF '(' • E ')' S
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 51
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 31
+
+    5 B: WHILE '(' • E ')' '{' C '}'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 52
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 32
+
+    6 B: LET ID • T ';'
+    7  | LET ID • T '=' E ';'
+
+    INT      shift, and go to state 53
+    BOOLEAN  shift, and go to state 54
+    STRING   shift, and go to state 55
+
+    T  go to state 56
+
+
+State 33
+
+   14 F2: FUNCTION ID • H
+
+    INT      shift, and go to state 53
+    BOOLEAN  shift, and go to state 54
+    STRING   shift, and go to state 55
+    VOID     shift, and go to state 57
+
+    T  go to state 58
+    H  go to state 59
+
+
+State 34
+
+    0 $accept: P $end •
+
+    $default  accept
+
+
+State 35
+
+    1 P: B P •
+
+    $default  reduce using rule 1 (P)
+
+
+State 36
+
+    2 P: F P •
+
+    $default  reduce using rule 2 (P)
+
+
+State 37
+
+   12 F: F1 '{' • C '}'
+
+    ID      shift, and go to state 1
+    PUT     shift, and go to state 2
+    GET     shift, and go to state 3
+    RETURN  shift, and go to state 4
+    IF      shift, and go to state 5
+    WHILE   shift, and go to state 6
+    LET     shift, and go to state 7
+
+    $default  reduce using rule 22 (C)
+
+    B  go to state 60
+    C  go to state 61
+    S  go to state 14
+
+
+State 38
+
+   13 F1: F2 '(' • A ')'
+
+    INT      shift, and go to state 53
+    BOOLEAN  shift, and go to state 54
+    STRING   shift, and go to state 55
+    VOID     shift, and go to state 62
+
+    T  go to state 63
+    A  go to state 64
+
+
+State 39
+
+   23 E: E • EQ_OP U
+   35 S: ID ADD_OP E • ';'
+
+    EQ_OP  shift, and go to state 46
+    ';'    shift, and go to state 65
+
+
+State 40
+
+   23 E: E • EQ_OP U
+   40 L: E • Q
+
+    EQ_OP  shift, and go to state 46
+    ','    shift, and go to state 66
+
+    $default  reduce using rule 43 (Q)
+
+    Q  go to state 67
+
+
+State 41
+
+   36 S: ID '(' L • ')' ';'
+
+    ')'  shift, and go to state 68
+
+
+State 42
+
+   23 E: E • EQ_OP U
+   34 S: ID '=' E • ';'
+
+    EQ_OP  shift, and go to state 46
+    ';'    shift, and go to state 69
+
+
+State 43
+
+   31 W: ID '(' • L ')'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    $default  reduce using rule 41 (L)
+
+    E  go to state 40
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+    L  go to state 70
+
+
+State 44
+
+   27 V: '!' W •
+
+    $default  reduce using rule 27 (V)
+
+
+State 45
+
+   23 E: E • EQ_OP U
+   30 W: '(' E • ')'
+
+    EQ_OP  shift, and go to state 46
+    ')'    shift, and go to state 71
+
+
+State 46
+
+   23 E: E EQ_OP • U
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    U  go to state 72
+    V  go to state 25
+    W  go to state 26
+
+
+State 47
+
+   37 S: PUT E ';' •
+
+    $default  reduce using rule 37 (S)
+
+
+State 48
+
+   25 U: U '+' • V
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    V  go to state 73
+    W  go to state 26
+
+
+State 49
+
+   38 S: GET ID ';' •
+
+    $default  reduce using rule 38 (S)
+
+
+State 50
+
+   39 S: RETURN Z ';' •
+
+    $default  reduce using rule 39 (S)
+
+
+State 51
+
+    4 B: IF '(' E • ')' S
+   23 E: E • EQ_OP U
+
+    EQ_OP  shift, and go to state 46
+    ')'    shift, and go to state 74
+
+
+State 52
+
+    5 B: WHILE '(' E • ')' '{' C '}'
+   23 E: E • EQ_OP U
+
+    EQ_OP  shift, and go to state 46
+    ')'    shift, and go to state 75
+
+
+State 53
+
+    9 T: INT •
+
+    $default  reduce using rule 9 (T)
+
+
+State 54
+
+   10 T: BOOLEAN •
+
+    $default  reduce using rule 10 (T)
+
+
+State 55
+
+   11 T: STRING •
+
+    $default  reduce using rule 11 (T)
+
+
+State 56
+
+    6 B: LET ID T • ';'
+    7  | LET ID T • '=' E ';'
+
+    ';'  shift, and go to state 76
+    '='  shift, and go to state 77
+
+
+State 57
+
+   16 H: VOID •
+
+    $default  reduce using rule 16 (H)
+
+
+State 58
+
+   15 H: T •
+
+    $default  reduce using rule 15 (H)
+
+
+State 59
+
+   14 F2: FUNCTION ID H •
+
+    $default  reduce using rule 14 (F2)
+
+
+State 60
+
+   21 C: B • C
+
+    ID      shift, and go to state 1
+    PUT     shift, and go to state 2
+    GET     shift, and go to state 3
+    RETURN  shift, and go to state 4
+    IF      shift, and go to state 5
+    WHILE   shift, and go to state 6
+    LET     shift, and go to state 7
+
+    $default  reduce using rule 22 (C)
+
+    B  go to state 60
+    C  go to state 78
+    S  go to state 14
+
+
+State 61
+
+   12 F: F1 '{' C • '}'
+
+    '}'  shift, and go to state 79
+
+
+State 62
+
+   18 A: VOID •
+
+    $default  reduce using rule 18 (A)
+
+
+State 63
+
+   17 A: T • ID K
+
+    ID  shift, and go to state 80
+
+
+State 64
+
+   13 F1: F2 '(' A • ')'
+
+    ')'  shift, and go to state 81
+
+
+State 65
+
+   35 S: ID ADD_OP E ';' •
+
+    $default  reduce using rule 35 (S)
+
+
+State 66
+
+   42 Q: ',' • E Q
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 82
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 67
+
+   40 L: E Q •
+
+    $default  reduce using rule 40 (L)
+
+
+State 68
+
+   36 S: ID '(' L ')' • ';'
+
+    ';'  shift, and go to state 83
+
+
+State 69
+
+   34 S: ID '=' E ';' •
+
+    $default  reduce using rule 34 (S)
+
+
+State 70
+
+   31 W: ID '(' L • ')'
+
+    ')'  shift, and go to state 84
+
+
+State 71
+
+   30 W: '(' E ')' •
+
+    $default  reduce using rule 30 (W)
+
+
+State 72
+
+   23 E: E EQ_OP U •
+   25 U: U • '+' V
+
+    '+'  shift, and go to state 48
+
+    $default  reduce using rule 23 (E)
+
+
+State 73
+
+   25 U: U '+' V •
+
+    $default  reduce using rule 25 (U)
+
+
+State 74
+
+    4 B: IF '(' E ')' • S
+
+    ID      shift, and go to state 1
+    PUT     shift, and go to state 2
+    GET     shift, and go to state 3
+    RETURN  shift, and go to state 4
+
+    S  go to state 85
+
+
+State 75
+
+    5 B: WHILE '(' E ')' • '{' C '}'
+
+    '{'  shift, and go to state 86
+
+
+State 76
+
+    6 B: LET ID T ';' •
+
+    $default  reduce using rule 6 (B)
+
+
+State 77
+
+    7 B: LET ID T '=' • E ';'
+
+    ID      shift, and go to state 18
+    ENTERO  shift, and go to state 19
+    CADENA  shift, and go to state 20
+    '!'     shift, and go to state 21
+    '('     shift, and go to state 22
+
+    E  go to state 87
+    U  go to state 24
+    V  go to state 25
+    W  go to state 26
+
+
+State 78
+
+   21 C: B C •
+
+    $default  reduce using rule 21 (C)
+
+
+State 79
+
+   12 F: F1 '{' C '}' •
+
+    $default  reduce using rule 12 (F)
+
+
+State 80
+
+   17 A: T ID • K
+
+    ','  shift, and go to state 88
+
+    $default  reduce using rule 20 (K)
+
+    K  go to state 89
+
+
+State 81
+
+   13 F1: F2 '(' A ')' •
+
+    $default  reduce using rule 13 (F1)
+
+
+State 82
+
+   23 E: E • EQ_OP U
+   42 Q: ',' E • Q
+
+    EQ_OP  shift, and go to state 46
+    ','    shift, and go to state 66
+
+    $default  reduce using rule 43 (Q)
+
+    Q  go to state 90
+
+
+State 83
+
+   36 S: ID '(' L ')' ';' •
+
+    $default  reduce using rule 36 (S)
+
+
+State 84
+
+   31 W: ID '(' L ')' •
+
+    $default  reduce using rule 31 (W)
+
+
+State 85
+
+    4 B: IF '(' E ')' S •
+
+    $default  reduce using rule 4 (B)
+
+
+State 86
+
+    5 B: WHILE '(' E ')' '{' • C '}'
+
+    ID      shift, and go to state 1
+    PUT     shift, and go to state 2
+    GET     shift, and go to state 3
+    RETURN  shift, and go to state 4
+    IF      shift, and go to state 5
+    WHILE   shift, and go to state 6
+    LET     shift, and go to state 7
+
+    $default  reduce using rule 22 (C)
+
+    B  go to state 60
+    C  go to state 91
+    S  go to state 14
+
+
+State 87
+
+    7 B: LET ID T '=' E • ';'
+   23 E: E • EQ_OP U
+
+    EQ_OP  shift, and go to state 46
+    ';'    shift, and go to state 92
+
+
+State 88
+
+   19 K: ',' • T ID K
+
+    INT      shift, and go to state 53
+    BOOLEAN  shift, and go to state 54
+    STRING   shift, and go to state 55
+
+    T  go to state 93
+
+
+State 89
+
+   17 A: T ID K •
+
+    $default  reduce using rule 17 (A)
+
+
+State 90
+
+   42 Q: ',' E Q •
+
+    $default  reduce using rule 42 (Q)
+
+
+State 91
+
+    5 B: WHILE '(' E ')' '{' C • '}'
+
+    '}'  shift, and go to state 94
+
+
+State 92
+
+    7 B: LET ID T '=' E ';' •
+
+    $default  reduce using rule 7 (B)
+
+
+State 93
+
+   19 K: ',' T • ID K
+
+    ID  shift, and go to state 95
+
+
+State 94
+
+    5 B: WHILE '(' E ')' '{' C '}' •
+
+    $default  reduce using rule 5 (B)
+
+
+State 95
+
+   19 K: ',' T ID • K
+
+    ','  shift, and go to state 88
+
+    $default  reduce using rule 20 (K)
+
+    K  go to state 96
+
+
+State 96
+
+   19 K: ',' T ID K •
+
+    $default  reduce using rule 19 (K)

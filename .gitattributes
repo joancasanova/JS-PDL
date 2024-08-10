@@ -1,0 +1,36 @@
+# Normalización de fin de línea
+* text=auto
+
+# Atributos específicos de archivos Java
+*.java diff=java
+
+# Atributos para archivos binarios
+*.class binary
+*.jar binary
+*.war binary
+*.ear binary
+
+# Atributos para archivos de configuración de entornos de desarrollo
+*.project text eol=lf
+*.classpath text eol=lf
+*.settings/* text eol=lf
+
+# Atributos específicos de archivos de Gradle
+build.gradle text eol=lf
+settings.gradle text eol=lf
+*.kts text eol=lf
+
+# Atributos para archivos de VSCode
+.vscode/* text eol=lf
+
+# Atributos específicos para otros archivos de configuración y de sistema
+*.md text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.json text eol=lf
+*.xml text eol=lf
+*.yml text eol=lf
+*.properties text eol=lf
+
+# Archivos específicos de macOS
+.DS_Store binary
