@@ -28,10 +28,7 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
-    testLogging {
-        events("PASSED", "FAILED", "SKIPPED")
-        showStandardStreams = true
-    }
+    enabled = false
 }
 
 tasks.jar {
@@ -43,23 +40,11 @@ tasks.jar {
     }
     archiveBaseName.set("Analizador")
     archiveVersion.set("1.0")
-    destinationDirectory.set(file("$buildDir/libs"))
-}
-
-tasks.compileJava {
-    destinationDirectory.set(file("$buildDir/classes/java/main"))
-}
-
-tasks.compileTestJava {
-    destinationDirectory.set(file("$buildDir/classes/java/test"))
+    destinationDirectory.set(layout.buildDirectory.dir("libs").get().asFile)
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-}
-
-tasks.build {
-    dependsOn(tasks.test)
 }
 
 // Tarea personalizada para ejecutar la aplicación

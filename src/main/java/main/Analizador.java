@@ -44,7 +44,7 @@ public class Analizador {
             FileReader fichero = new FileReader(rutaArchivo);
             procesarFichero(fichero);
             System.out.println(
-                    "Análisis completo. Se han generado los archivos de tokens, reglas, y tabla de símbolos.");
+                    "Analisis completo. Se han generado los archivos de tokens, reglas, y tabla de simbolos.");
             fichero.close();
         } catch (IllegalStateException e) {
             System.err.println(e.getLocalizedMessage());
