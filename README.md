@@ -1,3 +1,13 @@
+**AVISOS**: 
+
+1. Esta es una guía de elaboración propia e independiente del equipo docente. Debe tomarse como una referencia imperfecta. Se aconseja al alumno que dedique tiempo a comprender todos los conceptos que se deben aplicar para el desarrollo de su práctica. En el caso de que no se comprenda bien las bases teóricas, no será capaz de desarrollar la práctica ni siquiera siguiendo esta guía.
+
+2. Se aconseja que en caso de dudas sobre los contenidos teóricos se concerten tutorías con el equipo docente, además de acudir a clase siempre que sea posible.
+
+3. Se han detectado errores en el código, especialmente en el módulo de análisis semántico, que aún no han sido corregidos. Se valoran las sugerencias y pull requests para solucionar estos problemas. Algunos de los errores detectados están en la sección de [issues](https://github.com/joancasanova/PDL/issues), aunque es posible que existan más.
+
+4. El código publicado en este repositorio está destinado únicamente como referencia para resolver dudas. Cualquier acto de copia constituye una violación de los derechos de propiedad intelectual y una infracción de las normas éticas de la UPM, lo que podría acarrear sanciones tanto por mi parte como por parte de la UPM.
+
 # Procesador de Lenguaje JS-PdL
 
 Este proyecto ha sido desarrollado para la asignatura **Procesadores de Lenguajes** en la **Universidad Politécnica de Madrid** durante el curso 2023-24.
@@ -50,14 +60,6 @@ Además de las funcionalidades comunes para todos los grupos, las funcionalidade
 ## Guia Completa para el Desarrollo de la Practica - JS-PdL
 
 A continuación se presenta una guía detallada basada en el código de este repositorio para el desarrollo de la práctica.
-
-**AVISO 1: Esta es una guía de elaboración propia e independiente del equipo docente. Debe tomarse como una referencia imperfecta. Se aconseja al alumno que dedique tiempo a comprender todos los conceptos que se deben aplicar para el desarrollo de su práctica. En el caso de que no se comprenda bien las bases teóricas, no será capaz de desarrollar la práctica ni siquiera siguiendo esta guía.**
-
-**AVISO 2: Se aconseja que en caso de dudas sobre los contenidos teóricos se concerten tutorías con el equipo docente, además de acudir a clase siempre que sea posible.**
-
-**AVISO 3: Se han detectado errores en el código, especialmente en el módulo de análisis semántico, que aún no han sido corregidos. Se valoran las sugerencias y pull requests para solucionar estos problemas. Algunos de los errores detectados están en la sección de [issues](https://github.com/joancasanova/PDL/issues), aunque es posible que existan más.**
-
-**AVISO 4: El código publicado en este repositorio está destinado únicamente como referencia para resolver dudas. Cualquier acto de copia constituye una violación de los derechos de propiedad intelectual y una infracción de las normas éticas de la UPM, lo que podría acarrear sanciones tanto por mi parte como por parte de la UPM.**
 
 ### Fases del Desarrollo
 
